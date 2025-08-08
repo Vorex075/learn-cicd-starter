@@ -33,4 +33,4 @@ jobs:
         run: gcloud builds submit --tag europe-southwest1-docker.pkg.dev/helpful-lens-468414-q3/notely-ar-repo/vorex075/notely:latest .
 
       - name: Deploy to Cloud Run
-        run: gcloud run deploy notely --image europe-southwest1-docker.pkg.dev/helpful-lens-468414-q3/notely-ar-repo/vorex075/notely:latest --region europe-southwest1 --allow-unauthenticated --project helpful-lens-468414-q3 --max_instances=4
+        run: gcloud run deploy notely --image europe-southwest1-docker.pkg.dev/helpful-lens-468414-q3/notely-ar-repo/vorex075/notely:latest --region europe-southwest1 --allow-unauthenticated --project helpful-lens-468414-q3 --max-instances=4
