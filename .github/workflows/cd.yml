@@ -30,4 +30,4 @@ jobs:
         uses: google-github-actions/setup-gcloud@v2
 
       - name: Update image
-        runs: gcloud builds submit --tag europe-southwest1-docker.pkg.dev/helpful-lens-468414-q3/notely-ar-repo/vorex075/notely:latest .
+        run: gcloud builds submit --tag europe-southwest1-docker.pkg.dev/helpful-lens-468414-q3/notely-ar-repo/vorex075/notely:latest .
