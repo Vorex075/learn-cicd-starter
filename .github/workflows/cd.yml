@@ -20,3 +20,14 @@ jobs:
 
       - name: Build code
         run: ./scripts/buildprod.sh
+
+      - name: Gcloud setup
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+
+      - name: Setup Cloud sdk
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Update image
+        runs: gcloud builds submit --tag europe-southwest1-docker.pkg.dev/helpful-lens-468414-q3/notely-ar-repo/vorex075/notely:latest .
