@@ -34,10 +34,11 @@ jobs:
       - name: Update image
         run: gcloud builds submit --tag europe-southwest1-docker.pkg.dev/helpful-lens-468414-q3/notely-ar-repo/vorex075/notely:latest .
 
-      - name: Deploy to Cloud Run
-        run: gcloud run deploy notely --image europe-southwest1-docker.pkg.dev/helpful-lens-468414-q3/notely-ar-repo/vorex075/notely:latest --region europe-southwest1 --allow-unauthenticated --project helpful-lens-468414-q3 --max-instances=4
       - name: Install goose
         run: go install github.com/pressly/goose/v3/cmd/goose@latest
 
       - name: Run migrations
         run: ./scripts/migrateup.sh
+
+      - name: Deploy to Cloud Run
+        run: gcloud run deploy notely --image europe-southwest1-docker.pkg.dev/helpful-lens-468414-q3/notely-ar-repo/vorex075/notely:latest --region europe-southwest1 --allow-unauthenticated --project helpful-lens-468414-q3 --max-instances=4
